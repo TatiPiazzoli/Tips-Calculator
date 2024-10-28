@@ -1,6 +1,10 @@
 package com.example.calculadoragorjetateste
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.RadioButton
 import androidx.activity.enableEdgeToEdge
@@ -15,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -40,18 +45,46 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        val adapter = ArrayAdapter.createFromResource(this, R.array.num_people, android.R.layout.simple_spinner_item)
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        binding.spinnerNumberOfPeople.adapter = adapter
+
+        var numOfPeopleSelected = 0
+        binding.spinnerNumberOfPeople.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    numOfPeopleSelected = position
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                }
+            }
+
+
         binding.btnClean.setOnClickListener {
+
+            binding.tvResult.text = ""
+            binding.tietAmount.setText("")
+            binding.rbTwenty.isChecked = false
+            binding.rbFifteen.isChecked = false
+            binding.rbTen.isChecked = false
 
         }
 
         binding.btnCalculate.setOnClickListener {
 
             val totalAmountTemp = binding.tietAmount.text
-            val peopleTemp = binding.tietPeople.text
 
-            if (totalAmountTemp?.isEmpty() == true ||
-                peopleTemp?.isEmpty() == true
-            ) {
+            if (totalAmountTemp?.isEmpty() == true) {
 
                 Snackbar.make(binding.tietAmount, "Please fill in all fields", Snackbar.LENGTH_LONG)
                     .show()
@@ -59,7 +92,7 @@ class MainActivity : AppCompatActivity() {
             } else {
 
                 val totalAmount: Float = totalAmountTemp.toString().toFloat()
-                val people: Int = peopleTemp.toString().toInt()
+                val people: Int = 1
 
                 val totalTemp = totalAmount / people
                 val tips = totalTemp * percentage / 100
