@@ -1,6 +1,7 @@
 package com.example.calculadoragorjetateste
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -22,8 +23,14 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
         var percentage: Int = 0
 
@@ -72,7 +79,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnClean.setOnClickListener {
 
-            binding.tvResult.text = ""
             binding.tietAmount.setText("")
             binding.rbTwenty.isChecked = false
             binding.rbFifteen.isChecked = false
@@ -92,12 +98,20 @@ class MainActivity : AppCompatActivity() {
             } else {
 
                 val totalAmount: Float = totalAmountTemp.toString().toFloat()
-                val people: Int = 1
+                val people: Int = numOfPeopleSelected
 
                 val totalTemp = totalAmount / people
                 val tips = totalTemp * percentage / 100
                 val totalTips = totalTemp + tips
-                binding.tvResult.text = "Total with tips:$totalTips"
+
+                intent = Intent(this, SummaryActivity::class.java)
+                intent.apply {
+                    putExtra("totalAmount", totalAmount)
+                    putExtra("numPeople", numOfPeopleSelected)
+                    putExtra("percentage", percentage)
+                    putExtra("total", totalTips )
+                }
+                startActivity(intent)
             }
         }
     }
