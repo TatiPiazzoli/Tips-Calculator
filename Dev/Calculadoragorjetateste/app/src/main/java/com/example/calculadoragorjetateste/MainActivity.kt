@@ -78,12 +78,7 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.btnClean.setOnClickListener {
-
-            binding.tietAmount.setText("")
-            binding.rbTwenty.isChecked = false
-            binding.rbFifteen.isChecked = false
-            binding.rbTen.isChecked = false
-
+            clean()
         }
 
         binding.btnCalculate.setOnClickListener {
@@ -114,5 +109,12 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+    }
+
+    private fun clean(){
+        binding.tietAmount.setText("")
+        binding.rbTwenty.isChecked = false
+        binding.rbFifteen.isChecked = false
+        binding.rbTen.isChecked = false
     }
 }
