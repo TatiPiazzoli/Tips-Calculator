@@ -55,7 +55,7 @@
             android:id="@+id/tiet_amount"
             android:layout_width="match_parent"
             android:layout_height="61dp"
-            android:hint="Ex: $ 100,00"
+            android:hint="Ex: 100,00"
             android:inputType="numberDecimal"
             android:paddingStart="0dp"
             android:textSize="24sp"
