@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tips calculator</string>
+    <string name="Subtitle">Fill in the fields below to find out how much tip you should pay</string>
+    <string name="Field1">Enter the total amount of the bill:</string>
+    <string name="Field2">Enter the number of people at the table to split the bill:</string>
+    <string name="Field3">Enter the percentage to pay as a tip:</string>
+    <string name="Ex_total">Ex: $ 100,00</string>
+    <string name="Clean">Clean</string>
+    <string name="Calculate">Calculate</string>
+    <string name="Summary_title">Summary</string>
+    <string name="Summary_subtitle">Check below the summary of your account:</string>
+    <string name="Total_amount">Total amount:</string>
+    <string name="Total_amount_summary">$ 250,00</string>
+    <string name="num_of_people_summary">Number of people:</string>
+    <string name="tip_percecntage_summary">Tip percecntage:</string>
+    <string name="Total_split_tips">$ 137,50</string>
+    <string name="Calculate_again">Calculate again</string>
+</resources>

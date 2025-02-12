@@ -1,18 +1,18 @@
 <resources>
-    <string name="app_name">Calculadoragorjetateste</string>
-    <string-array name="num_people">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <string name="app_name">Calculadora de gorjeta</string>
+    <string name="Subtitle">Preencha os campos abaixo para saber o quanto de gorjeta você deve pagar</string>
+    <string name="Field1">Preencha o valor total da conta:</string>
+    <string name="Field2">Preencha o número de pessoas que tem na mesa para dividir a conta:</string>
+    <string name="Field3">Preencha a porcentagem que será paga de gorjeta:</string>
+    <string name="Ex_total">Ex: R$ 100,00</string>
+    <string name="Clean">Limpar</string>
+    <string name="Calculate">Calcular</string>
+    <string name="Summary_title">Resumo</string>
+    <string name="Summary_subtitle">Veja abaixo o resumo da sua conta:</string>
+    <string name="Total_amount">Valor total:</string>
+    <string name="Total_amount_summary">R$ 250,00</string>
+    <string name="num_of_people_summary">Número de pessoas:</string>
+    <string name="tip_percecntage_summary">Porcentagem da gorjeta:</string>
+    <string name="Total_split_tips">R$ 137,50</string>
+    <string name="Calculate_again">Calcular novamente</string>
 </resources>
