@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Tips Calculator"
+        android:text="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:textSize="16sp"
-        android:text="Fill in the fields below to find out how much tip you should pay"
+        android:text="@string/Subtitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:textSize="16sp"
-        android:text="Enter the total amount of the bill: "
+        android:text="@string/Field1"
         app:layout_constraintStart_toStartOf="@+id/tv_subtitle"
         app:layout_constraintTop_toBottomOf="@+id/tv_subtitle" />
 
@@ -55,7 +55,7 @@
             android:id="@+id/tiet_amount"
             android:layout_width="match_parent"
             android:layout_height="61dp"
-            android:hint="Ex: 100,00"
+            android:hint="@string/Ex_total"
             android:inputType="numberDecimal"
             android:paddingStart="0dp"
             android:textSize="24sp"
@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Enter the amount of people at the table:"
+        android:text="@string/Field2"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/til_total"
         app:layout_constraintTop_toBottomOf="@+id/til_total" />
@@ -103,10 +103,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginTop="32dp"
-        android:text="Enter the percentage to pay as a tip:"
-
+        android:text="@string/Field3"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@id/til_num_people"
         app:layout_constraintTop_toBottomOf="@id/til_num_people" />
@@ -152,7 +150,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="16dp"
-        android:text="Clean"
+        android:text="@string/Clean"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_guideline"
@@ -165,7 +163,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="16dp"
-        android:text="Calculate"
+        android:text="@string/Calculate"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

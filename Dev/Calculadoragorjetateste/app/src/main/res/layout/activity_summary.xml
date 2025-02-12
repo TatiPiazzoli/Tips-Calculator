@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Summary"
+        android:text="@string/Summary_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textSize="16sp"
-        android:text="Check below the summary of your account"
+        android:text="@string/Summary_subtitle"
         app:layout_constraintStart_toStartOf="@+id/tv_summary"
         app:layout_constraintTop_toBottomOf="@+id/tv_summary" />
 
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:layout_marginTop="32dp"
-        android:text="Total amount:"
+        android:text="@string/Total_amount"
         app:layout_constraintStart_toStartOf="@+id/tv_summary_subtitle"
         app:layout_constraintTop_toBottomOf="@+id/tv_summary_subtitle" />
 
@@ -45,7 +45,7 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/total_amount_label"
-        tools:text="$250,00" />
+        tools:text="@string/Total_amount_summary" />
 
     <TextView
         android:id="@+id/num_people_label"
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:layout_marginTop="32dp"
-        android:text="Number of people:"
+        android:text="@string/num_of_people_summary"
         app:layout_constraintStart_toStartOf="@+id/total_amount_label"
         app:layout_constraintTop_toBottomOf="@+id/total_amount_label" />
 
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:layout_marginTop="32dp"
-        android:text="Tip percecntage:"
+        android:text="@string/tip_percecntage_summary"
         app:layout_constraintStart_toStartOf="@+id/num_people_label"
         app:layout_constraintTop_toBottomOf="@+id/num_people_label" />
 
@@ -112,19 +112,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:maxLength="6"
+        android:maxLength="10"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/total_label"
-        tools:text="137,50" />
+        tools:text="@string/Total_split_tips" />
 
     <Button
         android:id="@+id/btn_calculate_again"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Calculate again"
+        android:text="@string/Calculate_again"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
