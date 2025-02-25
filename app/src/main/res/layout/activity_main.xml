@@ -54,7 +54,9 @@
             android:id="@+id/tie_total"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="100" />
+            android:hint="100"
+            android:inputType="numberDecimal"
+            android:maxLength="6" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -84,7 +86,9 @@
             android:id="@+id/tie_num_people"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="2" />
+            android:hint="2"
+            android:inputType="number"
+            android:maxLength="3" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
@@ -135,8 +139,8 @@
         android:layout_marginTop="32dp"
         android:text="Calcular"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/GL_btn"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/GL_btn"
         app:layout_constraintTop_toBottomOf="@+id/rg_percentage" />
 
     <Button
@@ -146,8 +150,8 @@
         android:layout_marginTop="32dp"
         android:text="Limpar"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/GL_btn"
-        app:layout_constraintTop_toBottomOf="@+id/rg_percentage" />
+        app:layout_constraintEnd_toStartOf="@+id/GL_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_percentage"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
