@@ -2,15 +2,10 @@ package com.example.calculadoragorjeta
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.calculadoragorjeta.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.textfield.TextInputEditText
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,36 +16,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var percentage: Int = 0
-
-        binding.rbTen.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked){
-                percentage = 10
-            }
-        }
-        binding.rbFifteen.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked){
-                percentage = 15
-            }
-        }
-        binding.rbTwenty.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked){
-                percentage = 20
-            }
-        }
-
         binding.btnCalculate.setOnClickListener {
             val totalTableTemp = binding.tieTotal.text
             val nPeopleTemp = binding.tieNumPeople.text
+            val percentageTemp = binding.tiePercentage.text
 
             if (totalTableTemp?.isEmpty() == true ||
-                nPeopleTemp?.isEmpty() == true
+                nPeopleTemp?.isEmpty() == true ||
+                percentageTemp?.isEmpty() == true
             ) {
                 Snackbar.make (binding.tieTotal, "Preencha todos os campos", Snackbar.LENGTH_LONG)
                     .show()
             } else {
                 val totalTable: Float = totalTableTemp.toString().toFloat()
                 val nPeople: Int = nPeopleTemp.toString().toInt()
+                val percentage: Int = percentageTemp.toString().toInt()
 
                 val totalTemp = totalTable / nPeople
                 val tips = totalTemp * percentage / 100
@@ -59,21 +39,25 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, SummaryActivity::class.java)
                 intent.apply {
                     putExtra("totalTable",totalTable )
-                    putExtra("numPeople", nPeopleTemp)
+                    putExtra("numPeople", nPeople)
                     putExtra("percentage", percentage)
                     putExtra("totalAmount", totalWithTips)
                 }
-                    startActivity(intent)
+                clean()
+                startActivity(intent)
             }
         }
 
         binding.btnClean.setOnClickListener {
-            binding.tieTotal.setText("")
-            binding.tieNumPeople.setText("")
-            binding.rbTen.isChecked = false
-            binding.rbFifteen.isChecked = false
-            binding.rbTwenty.isChecked = false
+            clean()
 
         }
     }
+
+    private fun clean(){
+        binding.tieTotal.setText("")
+        binding.tieNumPeople.setText("")
+        binding.tiePercentage.setText("")
+    }
+
 }

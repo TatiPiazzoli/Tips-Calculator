@@ -9,11 +9,12 @@
 
     <TextView
         android:id="@+id/tv_summary"
+        style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Resumo"
-        android:textSize="32sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/Summary_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Veja abaixo o resumo dos dados:"
+        android:text="@string/Summary_subtitle"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@id/tv_summary"
         app:layout_constraintTop_toBottomOf="@id/tv_summary" />
@@ -32,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Total da mesa:"
+        android:text="@string/Summary_total_table"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@id/tv_subtitle2"
         app:layout_constraintTop_toBottomOf="@id/tv_subtitle2" />
@@ -52,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Total de pessoas na mesa:"
+        android:text="@string/Summary_num_people"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@id/tv_total_table_label"
         app:layout_constraintTop_toBottomOf="@id/tv_total_table_label" />
@@ -72,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Porcentagem da gorjeta:"
+        android:text="@string/Summary_tip_percentage"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@id/tv_total_num_people_label"
         app:layout_constraintTop_toBottomOf="@id/tv_total_num_people_label" />
@@ -115,17 +116,18 @@
         android:layout_marginTop="32dp"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:maxLength="5"
         app:layout_constraintEnd_toEndOf="@id/v_separator"
         app:layout_constraintTop_toBottomOf="@id/v_separator"
-        tools:text="R$ 45,65" />
+        tools:text="45,65" />
 
     <Button
         android:id="@+id/btn_calculate_again"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:text="@string/Calculate_again"
         android:textSize="16sp"
-        android:text="Calcular novamente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
