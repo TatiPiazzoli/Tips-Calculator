@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">CalculadoraGorjeta</string>
+    <string name="app_name">TipsCalculator</string>
+    <string name="Main_title">Tips Calculator</string>
+    <string name="Main_subtitle">Fill in all the fields to find out how much each person will pay:</string>
+    <string name="Main_total_table">Enter the total amount of the bill:</string>
+    <string name="Main_num_people">Enter the number os people at the table:</string>
+    <string name="Main_tip_percentage">Enter the tip percentage:</string>
+    <string name="Clean_button">Clean</string>
+    <string name="Calculate">Calculate</string>
+    <string name="Ex_total">Ex: $ 100,00</string>
+    <string name="Summary_title">Summary</string>
+    <string name="Summary_subtitle">Check bellow the summary:</string>
+    <string name="Summary_total_table">Total table:</string>
+    <string name="Summary_num_people">Number of people at the table:</string>
+    <string name="Summary_tip_percentage">Tip percentage:</string>
+    <string name="Calculate_again">Calculate again</string>
 </resources>
